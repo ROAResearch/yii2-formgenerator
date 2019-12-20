@@ -9,7 +9,7 @@ use Codeception\{Example, Util\HttpCode};
 /**
  * Cest to form/<form_id:\d+>/section resource.
  *
- * @author Carlos (neverabe) Llamosas <carlos@tecnocen.com>
+ * @author Carlos (neverabe) Llamosas <cmllamosas@gmail.com>
  */
 class SectionCest extends \roaresearch\yii2\roa\test\AbstractResourceCest
 {

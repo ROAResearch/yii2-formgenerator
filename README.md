@@ -1,4 +1,4 @@
-Yii2 Formgenerator
+Yii2 Form Generator
 =======================
 
 Library to dynamically generate forms in database.

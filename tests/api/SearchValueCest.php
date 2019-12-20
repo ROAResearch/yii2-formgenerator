@@ -6,7 +6,7 @@ use Codeception\{Example, Util\HttpCode};
 /**
  * Cest to Solicitude-value resource.
  *
- * @author Carlos (neverabe) Llamosas <carlos@tecnocen.com>
+ * @author Carlos (neverabe) Llamosas <cmllamosas@gmail.com>
  */
 class SearchValueCest extends \roaresearch\yii2\roa\test\AbstractResourceCest
 {

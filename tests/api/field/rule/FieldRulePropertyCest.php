@@ -9,7 +9,7 @@ use Codeception\{Example, Util\HttpCode};
 /**
  * Cest to field/<field_id:\d+>/rule/<rule_id:\d+>/property resource.
  *
- * @author Carlos (neverabe) Llamosas <carlos@tecnocen.com>
+ * @author Carlos (neverabe) Llamosas <cmllamosas@gmail.com>
  */
 class FieldRulePropertyCest extends \roaresearch\yii2\roa\test\AbstractResourceCest
 {

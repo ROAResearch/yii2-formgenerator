@@ -1,15 +1,15 @@
-Tecnocen Form Generator
+Yii2 Form Generator
 =======================
 
 Libreria para generar dinamicamente formularios usando una base de datos.
 
-[![Latest Stable Version](https://poser.pugx.org/tecnocen/yii2-formgenerator/v/stable)](https://packagist.org/packages/tecnocen/yii2-formgenerator)
-[![Total Downloads](https://poser.pugx.org/tecnocen/yii2-formgenerator/downloads)](https://packagist.org/packages/tecnocen/yii2-formgenerator)
-[![Code Coverage](https://scrutinizer-ci.com/g/tecnocen-com/yii2-formgenerator/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/tecnocen-com/yii2-formgenerator/?branch=master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/tecnocen-com/yii2-formgenerator/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/tecnocen-com/yii2-formgenerator/?branch=master)
+[![Latest Stable Version](https://poser.pugx.org/roaresearch/yii2-formgenerator/v/stable)](https://packagist.org/packages/roaresearch/yii2-formgenerator)
+[![Total Downloads](https://poser.pugx.org/roaresearch/yii2-formgenerator/downloads)](https://packagist.org/packages/roaresearch/yii2-formgenerator)
+[![Code Coverage](https://scrutinizer-ci.com/g/roaresearch/yii2-formgenerator/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/roaresearch/yii2-formgenerator/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/roaresearch/yii2-formgenerator/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/roaresearch/yii2-formgenerator/?branch=master)
 
-Scrutinizer [![Build Status Scrutinizer](https://scrutinizer-ci.com/g/tecnocen-com/yii2-formgenerator/badges/build.png?b=master&style=flat)](https://scrutinizer-ci.com/g/tecnocen-com/yii2-formgenerator/build-status/master)
-Travis [![Build Status Travis](https://travis-ci.org/tecnocen-com/yii2-formgenerator.svg?branch=master&style=flat?style=for-the-badge)](https://travis-ci.org/tecnocen-com/yii2-formgenerator)
+Scrutinizer [![Build Status Scrutinizer](https://scrutinizer-ci.com/g/roaresearch/yii2-formgenerator/badges/build.png?b=master&style=flat)](https://scrutinizer-ci.com/g/roaresearch/yii2-formgenerator/build-status/master)
+Travis [![Build Status Travis](https://travis-ci.org/roaresearch/yii2-formgenerator.svg?branch=master&style=flat?style=for-the-badge)](https://travis-ci.org/roaresearch/yii2-formgenerator)
 
 ## Iniciando
 
@@ -20,7 +20,7 @@ productivo.
 
 ### Prerequisitos
 
-- Instalar PHP 7.0 or superior
+- Instalar PHP 7.1 or superior
 - [Composer Instalado](https://getcomposer.org/doc/00-intro.md)
 
 Los demas requerimientos son revisados por composer al instalar el sistema en
@@ -29,16 +29,16 @@ el proximo paso.
 ### Instalacion
 ----------------
 
-Puedes usar composer para instalar la libreria `tecnocen/yii2-formgenerator` con
+Puedes usar composer para instalar la libreria `roaresearch/yii2-formgenerator` con
 el comando;
 
-`composer require tecnocen/yii2-formgenerator`
+`composer require roaresearch/yii2-formgenerator`
 
 o editar el archivo `composer.json`
 
 ```json
 require: {
-    "tecnocen/yii2-formgenerator": "*",
+    "roaresearch/yii2-formgenerator": "*",
 }
 ```
 
@@ -46,7 +46,7 @@ require: {
 
 Correr las migraciones requeridas.
 
-`php yii migrate/up -p=@tecnocen/formgenerator/migrations`
+`php yii migrate/up -p=@roaresearch/formgenerator/migrations`
 
 Que instala la siguiente estructura.
 ![Database Diagram](diagram.png)
@@ -134,25 +134,15 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on the process for su
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/tecnocen-com/yii2-formgenerator/tags).
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/ROAResearch/yii2-formgenerator/tags).
 
-_Considering [SemVer](http://semver.org/) for versioning rules 9, 10 and 11 talk about pre-releases, they will not be used within the Tecnocen-com._
+_Considering [SemVer](http://semver.org/) for versioning rules 9, 10 and 11 talk about pre-releases, they will not be used within the ROAResearch._
 
 ## Authors
 
-* [**Angel Guevara**](https://github.com/Faryshta) - *Initial work* - [Tecnocen.com](https://github.com/Tecnocen-com)
-* [**Carlos Llamosas**](https://github.com/neverabe) - *Initial work* - [Tecnocen.com](https://github.com/Tecnocen-com)
-
-See also the list of [contributors](https://github.com/tecnocen-com/yii2-formgenerator/graphs/contributors) who participated in this project.
+* [**Angel Guevara**](https://github.com/Faryshta) - Initial work
+* [**Carlos Llamosas**](https://github.com/neverabe) - Initial work
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* TO DO - Hat tip to anyone who's code was used
-* TO DO - Inspiration
-* TO DO - etc
-
-[![yii2-workflow](https://img.shields.io/badge/Powered__by-Tecnocen.com-orange.svg?style=for-the-badge)](https://www.tecnocen.com/)
