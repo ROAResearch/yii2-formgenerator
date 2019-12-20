@@ -3,17 +3,15 @@
 namespace field\rule;
 
 use ApiTester;
-use app\fixtures\OauthAccessTokensFixture;
-use app\fixtures\FieldRulePropertyFixture;
-use Codeception\Example;
-use Codeception\Util\HttpCode;
+use app\fixtures\{OauthAccessTokensFixture, FieldRulePropertyFixture};
+use Codeception\{Example, Util\HttpCode};
 
 /**
  * Cest to field/<field_id:\d+>/rule/<rule_id:\d+>/property resource.
  *
  * @author Carlos (neverabe) Llamosas <carlos@tecnocen.com>
  */
-class FieldRulePropertyCest extends \tecnocen\roa\test\AbstractResourceCest
+class FieldRulePropertyCest extends \roaresearch\yii2\roa\test\AbstractResourceCest
 {
     protected function authToken(ApiTester $I)
     {
@@ -27,7 +25,7 @@ class FieldRulePropertyCest extends \tecnocen\roa\test\AbstractResourceCest
     {
         $I->haveFixtures([
             'field_rule_property' => [
-                'class' =>FieldRulePropertyFixture::class,
+                'class' => FieldRulePropertyFixture::class,
                 'depends' => [],
             ],
         ]);
@@ -249,7 +247,7 @@ class FieldRulePropertyCest extends \tecnocen\roa\test\AbstractResourceCest
     /**
      * @inheritdoc
      */
-    protected function recordJsonType()
+    protected function recordJsonType(): array
     {
         return [
             'property' => 'string',
@@ -260,7 +258,7 @@ class FieldRulePropertyCest extends \tecnocen\roa\test\AbstractResourceCest
     /**
      * @inheritdoc
      */
-    protected function getRoutePattern()
+    protected function getRoutePattern(): string
     {
         return 'field/<field_id:\d+>/rule/<rule_id:\d+>/property';
     }

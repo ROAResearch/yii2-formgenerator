@@ -1,6 +1,6 @@
 <?php
 
-namespace tecnocen\formgenerator\roa\models;
+namespace roaresearch\yii2\formgenerator\roa\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
@@ -15,7 +15,7 @@ use yii\data\ActiveDataProvider;
  * @author Angel (Faryshta) Guevara <aguevara@alquimiadigital.mx>
  */
 class SolicitudeValueSimpleSearch extends SolicitudeValue implements
-    \tecnocen\roa\ResourceSearch
+    \roaresearch\yii2\roa\ResourceSearch
 {
     /**
      * @inhertidoc

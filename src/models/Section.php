@@ -1,8 +1,8 @@
 <?php
 
-namespace tecnocen\formgenerator\models;
+namespace roaresearch\yii2\formgenerator\models;
 
-use tecnocen\formgenerator\behaviors\Positionable;
+use roaresearch\yii2\formgenerator\behaviors\Positionable;
 use yii\db\ActiveQuery;
 
 /**
@@ -18,7 +18,7 @@ use yii\db\ActiveQuery;
  * @property SectionField[] $sectionFields
  * @property Field[] $fieds
  */
-class Section extends \tecnocen\rmdb\models\Entity
+class Section extends \roaresearch\yii2\rmdb\models\Entity
 {
     /**
      * @var string full class name of the model used in the relation
@@ -49,7 +49,7 @@ class Section extends \tecnocen\rmdb\models\Entity
     /**
      * @inheritdoc
      */
-    protected function attributeTypecast()
+    protected function attributeTypecast(): array
     {
         return parent::attributeTypecast() + [
             'id' => 'integer',

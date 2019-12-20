@@ -1,8 +1,8 @@
 <?php
 
-namespace tecnocen\formgenerator\models;
+namespace roaresearch\yii2\formgenerator\models;
 
-use tecnocen\formgenerator\behaviors\Positionable;
+use roaresearch\yii2\formgenerator\behaviors\Positionable;
 use Yii;
 use yii\db\ActiveQuery;
 
@@ -20,7 +20,7 @@ use yii\db\ActiveQuery;
  * @property array $solicitudeValuesData
  * @property array $solicitudeValuesDataDetail
  */
-class SectionField extends \tecnocen\rmdb\models\Entity
+class SectionField extends \roaresearch\yii2\rmdb\models\Entity
 {
     /**
      * @var string full class name of the model used in the relation
@@ -51,7 +51,7 @@ class SectionField extends \tecnocen\rmdb\models\Entity
     /**
      * @inheritdoc
      */
-    protected function attributeTypecast()
+    protected function attributeTypecast(): array
     {
         return parent::attributeTypecast() + [
             'section_id' => 'integer',
@@ -161,9 +161,9 @@ class SectionField extends \tecnocen\rmdb\models\Entity
     public function getSolicitudeValuesDetail(): ActiveQuery
     {
         return Yii::configure(
-                $this->getSolicitudeValues(),
-                ['multiple' => false]
-            )
+            $this->getSolicitudeValues(),
+            ['multiple' => false]
+        )
             ->select([
                 'count' => 'count(value)',
                 'countDistinct' => 'count(distinct value)',

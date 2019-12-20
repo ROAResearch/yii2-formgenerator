@@ -1,8 +1,8 @@
 <?php
 
-namespace tecnocen\formgenerator\roa\models;
+namespace roaresearch\yii2\formgenerator\roa\models;
 
-use tecnocen\roa\ResourceSearch;
+use roaresearch\yii2\roa\ResourceSearch;
 use yii\data\ActiveDataProvider;
 
 /**
@@ -39,7 +39,7 @@ class DataTypeSearch extends DataType implements ResourceSearch
     public function search(
         array $params,
         ?string $formName = ''
-    ): ?ActiveDataProvider { 
+    ): ?ActiveDataProvider {
         $this->load($params, $formName);
         if (!$this->validate()) {
             return null;

@@ -1,16 +1,16 @@
 <?php
 
-namespace tecnocen\formgenerator\roa\resources;
+namespace roaresearch\yii2\formgenerator\roa\resources;
 
-use tecnocen\formgenerator\roa\models\Field;
-use tecnocen\formgenerator\roa\models\FieldSearch;
+use roaresearch\yii2\formgenerator\roa\models\Field;
+use roaresearch\yii2\formgenerator\roa\models\FieldSearch;
 use yii\db\ActiveQuery;
 
 /**
  * CRUD resource for `Field` records
  * @author Angel (Faryshta) Guevara <aguevara@alquimiadigital.mx>
  */
-class FieldResource extends \tecnocen\roa\controllers\Resource
+class FieldResource extends \roaresearch\yii2\roa\controllers\Resource
 {
     /**
      * @inheritdoc

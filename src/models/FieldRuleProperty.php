@@ -1,6 +1,6 @@
 <?php
 
-namespace tecnocen\formgenerator\models;
+namespace roaresearch\yii2\formgenerator\models;
 
 use yii\db\ActiveQuery;
 
@@ -13,7 +13,7 @@ use yii\db\ActiveQuery;
  *
  * @property FieldRule $rule
  */
-class FieldRuleProperty extends \tecnocen\rmdb\models\Entity
+class FieldRuleProperty extends \roaresearch\yii2\rmdb\models\Entity
 {
     /**
      * @var string full class name of the model used in the relation
@@ -32,7 +32,7 @@ class FieldRuleProperty extends \tecnocen\rmdb\models\Entity
     /**
      * @inheritdoc
      */
-    protected function attributeTypecast()
+    protected function attributeTypecast(): array
     {
         return parent::attributeTypecast() + ['rule_id' => 'integer'];
     }

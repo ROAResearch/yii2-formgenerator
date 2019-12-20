@@ -1,16 +1,14 @@
 <?php
 
-use app\fixtures\OauthAccessTokensFixture;
-use app\fixtures\SolicitudeValueFixture;
-use Codeception\Example;
-use Codeception\Util\HttpCode;
+use app\fixtures\{OauthAccessTokensFixture, SolicitudeValueFixture};
+use Codeception\{Example, Util\HttpCode};
 
 /**
  * Cest to form/<form_id:\d+>/solicitude/<solicitude_id:\d>/value resource.
  *
  * @author Carlos (neverabe) Llamosas <carlos@tecnocen.com>
  */
-class SolicitudeValueCest extends \tecnocen\roa\test\AbstractResourceCest
+class SolicitudeValueCest extends \roaresearch\yii2\roa\test\AbstractResourceCest
 {
     protected function authToken(ApiTester $I)
     {
@@ -114,7 +112,7 @@ class SolicitudeValueCest extends \tecnocen\roa\test\AbstractResourceCest
                 'data' => [
                     'expand' => 'sectionField, section, field, solicitude',
                 ],
-                'httpCode' => HttpCode::OK,            
+                'httpCode' => HttpCode::OK,
             ],
             'not found form' => [
                 'urlParams' => [
@@ -285,7 +283,7 @@ class SolicitudeValueCest extends \tecnocen\roa\test\AbstractResourceCest
     /**
      * @inheritdoc
      */
-    protected function recordJsonType()
+    protected function recordJsonType(): array
     {
         return [
             'solicitude_id' => 'integer:>0',
@@ -298,7 +296,7 @@ class SolicitudeValueCest extends \tecnocen\roa\test\AbstractResourceCest
     /**
      * @inheritdoc
      */
-    protected function getRoutePattern()
+    protected function getRoutePattern(): string
     {
         return 'form/<form_id:\d+>/solicitude/<solicitude_id:\d+>/value';
     }

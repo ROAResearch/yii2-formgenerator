@@ -1,16 +1,16 @@
 <?php
 
-namespace tecnocen\formgenerator\roa\resources\form;
+namespace roaresearch\yii2\formgenerator\roa\resources\form;
 
 use Yii;
-use tecnocen\formgenerator\roa\models\Section;
-use tecnocen\formgenerator\roa\models\SectionSearch;
+use roaresearch\yii2\formgenerator\roa\models\Section;
+use roaresearch\yii2\formgenerator\roa\models\SectionSearch;
 
 /**
  * CRUD resource for `Section` records
  * @author Angel (Faryshta) Guevara <aguevara@alquimiadigital.mx>
  */
-class SectionResource extends \tecnocen\roa\controllers\Resource
+class SectionResource extends \roaresearch\yii2\roa\controllers\Resource
 {
     /**
      * @inheritdoc

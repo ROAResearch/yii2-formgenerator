@@ -2,8 +2,8 @@
 
 namespace app\fixtures;
 
-use tecnocen\formgenerator\fixtures\DataTypeFixture;
-use tecnocen\formgenerator\models\Field;
+use roaresearch\yii2\formgenerator\fixtures\DataTypeFixture;
+use roaresearch\yii2\formgenerator\models\Field;
 
 /**
  * Fixture to load `Field` records.

@@ -1,7 +1,7 @@
 <?php
 
-use tecnocen\formgenerator\behaviors\Positionable;
-use tecnocen\formgenerator\models\Form;
+use roaresearch\yii2\formgenerator\behaviors\Positionable;
+use roaresearch\yii2\formgenerator\models\Form;
 use yii\base\Component;
 use yii\base\InvalidConfigException;
 use yii\db\ActiveRecord;

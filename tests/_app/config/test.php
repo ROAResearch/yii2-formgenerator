@@ -1,8 +1,7 @@
 <?php
 
-use tecnocen\formgenerator\roa\modules\Version as FormgeneratorVersion;
-use tecnocen\roa\controllers\ProfileResource;
-use tecnocen\roa\hal\JsonResponseFormatter;
+use roaresearch\yii2\formgenerator\roa\modules\Version as FormgeneratorVersion;
+use roaresearch\yii2\roa\{controllers\ProfileResource, hal\JsonResponseFormatter};
 use yii\web\Response;
 
 return yii\helpers\ArrayHelper::merge(
@@ -12,7 +11,7 @@ return yii\helpers\ArrayHelper::merge(
         'bootstrap' => ['api'],
         'modules' => [
             'api' => [
-                'class' => tecnocen\roa\modules\ApiContainer::class,
+                'class' => roaresearch\yii2\roa\modules\ApiContainer::class,
                 'identityClass' => app\models\User::class,
                 'versions' => [
                     'f1' => [
@@ -21,7 +20,7 @@ return yii\helpers\ArrayHelper::merge(
                 ],
             ],
             'rmdb' => [
-                'class' => tecnocen\rmdb\Module::class,
+                'class' => roaresearch\yii2\rmdb\Module::class,
             ],
         ],
         'components' => [

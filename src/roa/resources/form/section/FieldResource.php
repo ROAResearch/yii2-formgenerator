@@ -1,15 +1,15 @@
 <?php
 
-namespace tecnocen\formgenerator\roa\resources\form\section;
+namespace roaresearch\yii2\formgenerator\roa\resources\form\section;
 
-use tecnocen\formgenerator\roa\models\SectionField;
-use tecnocen\formgenerator\roa\models\SectionFieldSearch;
+use roaresearch\yii2\formgenerator\roa\models\SectionField;
+use roaresearch\yii2\formgenerator\roa\models\SectionFieldSearch;
 
 /**
  * CRUD resource for `SectionField` records
  * @author Angel (Faryshta) Guevara <aguevara@alquimiadigital.mx>
  */
-class FieldResource extends \tecnocen\roa\controllers\Resource
+class FieldResource extends \roaresearch\yii2\roa\controllers\Resource
 {
     /**
      * @inheritdoc

@@ -1,8 +1,8 @@
 <?php
 
-namespace tecnocen\formgenerator\roa\models;
+namespace roaresearch\yii2\formgenerator\roa\models;
 
-use tecnocen\roa\ResourceSearch;
+use roaresearch\yii2\roa\ResourceSearch;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 

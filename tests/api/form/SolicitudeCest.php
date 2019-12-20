@@ -1,16 +1,14 @@
 <?php
 
-use app\fixtures\OauthAccessTokensFixture;
-use app\fixtures\SolicitudeFixture;
-use Codeception\Example;
-use Codeception\Util\HttpCode;
+use app\fixtures\{OauthAccessTokensFixture, SolicitudeFixture};
+use Codeception\{Example, Util\HttpCode};
 
 /**
  * Cest to form/<form_id:\d+>/solicitude resource.
  *
  * @author Carlos (neverabe) Llamosas <carlos@tecnocen.com>
  */
-class SolicitudeCest extends \tecnocen\roa\test\AbstractResourceCest
+class SolicitudeCest extends \roaresearch\yii2\roa\test\AbstractResourceCest
 {
     protected function authToken(ApiTester $I)
     {
@@ -242,7 +240,7 @@ class SolicitudeCest extends \tecnocen\roa\test\AbstractResourceCest
     /**
      * @inheritdoc
      */
-    protected function recordJsonType()
+    protected function recordJsonType(): array
     {
         return [
             'id' => 'integer:>0',
@@ -253,7 +251,7 @@ class SolicitudeCest extends \tecnocen\roa\test\AbstractResourceCest
     /**
      * @inheritdoc
      */
-    protected function getRoutePattern()
+    protected function getRoutePattern(): string
     {
         return 'form/<form_id:\d+>/solicitude';
     }

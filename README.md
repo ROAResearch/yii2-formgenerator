@@ -55,11 +55,11 @@ The ROA support is very simple and can be done by just adding a module version
 to the api container which will be used to hold the resources.
 
 ```php
-class Api extends \tecnocen\roa\modules\ApiContainer
+class Api extends \roaresearch\yii2\roa\modules\ApiContainer
 {
    $versions = [
        // other versions
-       'fg1' => ['class' => 'tecnocen\formgenerator\roa\modules\Version'],
+       'fg1' => ['class' => 'roaresearch\yii2\formgenerator\roa\modules\Version'],
    ];
 }
 ```

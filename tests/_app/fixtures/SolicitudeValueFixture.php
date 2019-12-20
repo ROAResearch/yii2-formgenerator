@@ -2,7 +2,7 @@
 
 namespace app\fixtures;
 
-use tecnocen\formgenerator\models\SolicitudeValue;
+use roaresearch\yii2\formgenerator\models\SolicitudeValue;
 
 /**
  * Fixture to load `SolicitudeValue` records.

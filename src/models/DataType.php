@@ -1,6 +1,6 @@
 <?php
 
-namespace tecnocen\formgenerator\models;
+namespace roaresearch\yii2\formgenerator\models;
 
 use yii\db\ActiveQuery;
 use yii\web\UploadedFile;
@@ -15,7 +15,7 @@ use yii\web\UploadedFile;
  *
  * @property Field[] $fields
  */
-class DataType extends \tecnocen\rmdb\models\Entity
+class DataType extends \roaresearch\yii2\rmdb\models\Entity
 {
     /**
      * @var string full class name of the model used in the relation
@@ -34,7 +34,7 @@ class DataType extends \tecnocen\rmdb\models\Entity
     /**
      * @inheritdoc
      */
-    protected function attributeTypecast()
+    protected function attributeTypecast(): array
     {
         return parent::attributeTypecast() + ['id' => 'integer'];
     }
@@ -82,12 +82,12 @@ class DataType extends \tecnocen\rmdb\models\Entity
      */
     public function verifyCast($attribute)
     {
-         if (!is_callable($this->getCastCallable())) {
-             $this->addError(
-                 $attribute,
-                 '`cast` must be an statically callable method.'
-             );
-         }
+        if (!is_callable($this->getCastCallable())) {
+            $this->addError(
+                $attribute,
+                '`cast` must be an statically callable method.'
+            );
+        }
     }
 
     public static function booleanCast($value, $attribute)
@@ -112,9 +112,11 @@ class DataType extends \tecnocen\rmdb\models\Entity
 
     public static function fileCast($value, $attribute)
     {
-        if (null !== ($uploadedFile = UploadedFile::getInstanceByName(
-            $attribute
-        ))) {
+        if (
+            null !== ($uploadedFile = UploadedFile::getInstanceByName(
+                $attribute
+            ))
+        ) {
             return $uploadedFile;
         }
         return $value;

@@ -7,7 +7,7 @@ depending on how they are stored internally on the database.
 Each record of data type contain a unique `name` and a valid `cast`.
 
 The cast must be the name of an static method on the class
-`tecnocen\formgenerator\models\DataType` or a signature of the type
+`roaresearch\yii2\formgenerator\models\DataType` or a signature of the type
 `full\class\Name:method` where `full\class\Name` is a namespaced autoloadable
 class and `method` is the name of an static method on the previous class.
 
@@ -17,7 +17,7 @@ Examples
 - `app\models\DataType:json`
 
 To enable the default supported data types you need to run fixture
-`tecnocen\formgenerator\fixtures\DataTypeFixture` which provides data types
+`roaresearch\yii2\formgenerator\fixtures\DataTypeFixture` which provides data types
 
 - String data type with cast as string
 - Integer data type with cast as integer

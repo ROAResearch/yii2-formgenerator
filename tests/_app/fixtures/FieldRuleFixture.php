@@ -2,7 +2,7 @@
 
 namespace app\fixtures;
 
-use tecnocen\formgenerator\models\FieldRule;
+use roaresearch\yii2\formgenerator\models\FieldRule;
 
 /**
  * Fixture to load `FieldRule` records.

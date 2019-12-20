@@ -1,16 +1,14 @@
 <?php
 
-use app\fixtures\OauthAccessTokensFixture;
-use app\fixtures\SolicitudeValueFixture;
-use Codeception\Example;
-use Codeception\Util\HttpCode;
+use app\fixtures\{OauthAccessTokensFixture, SolicitudeValueFixture};
+use Codeception\{Example, Util\HttpCode};
 
 /**
  * Cest to Solicitude-value resource.
  *
  * @author Carlos (neverabe) Llamosas <carlos@tecnocen.com>
  */
-class SearchValueCest extends \tecnocen\roa\test\AbstractResourceCest
+class SearchValueCest extends \roaresearch\yii2\roa\test\AbstractResourceCest
 {
     protected function authToken(ApiTester $I)
     {
@@ -65,7 +63,7 @@ class SearchValueCest extends \tecnocen\roa\test\AbstractResourceCest
     /**
      * @inheritdoc
      */
-    protected function recordJsonType()
+    protected function recordJsonType(): array
     {
         return [
             'solicitude_id' => 'integer:>0',
@@ -78,7 +76,7 @@ class SearchValueCest extends \tecnocen\roa\test\AbstractResourceCest
     /**
      * @inheritdoc
      */
-    protected function getRoutePattern()
+    protected function getRoutePattern(): string
     {
         return 'solicitude-value';
     }

@@ -2,7 +2,7 @@
 
 namespace app\fixtures;
 
-use tecnocen\formgenerator\models\Form;
+use roaresearch\yii2\formgenerator\models\Form;
 
 /**
  * Fixture to load `Form` records.

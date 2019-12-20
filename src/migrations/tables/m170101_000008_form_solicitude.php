@@ -1,6 +1,6 @@
 <?php
 
-class m170101_000008_form_solicitude extends tecnocen\rmdb\migrations\CreateEntity
+class m170101_000008_form_solicitude extends roaresearch\yii2\rmdb\migrations\CreateEntity
 {
     /**
      * @inheritdoc

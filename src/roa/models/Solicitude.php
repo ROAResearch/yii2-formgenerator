@@ -1,10 +1,10 @@
 <?php
 
-namespace tecnocen\formgenerator\roa\models;
+namespace roaresearch\yii2\formgenerator\roa\models;
 
-use tecnocen\formgenerator\models as base;
-use tecnocen\roa\hal\Contract;
-use tecnocen\roa\hal\ContractTrait;
+use roaresearch\yii2\formgenerator\models as base;
+use roaresearch\yii2\roa\hal\Contract;
+use roaresearch\yii2\roa\hal\ContractTrait;
 use yii\helpers\Url;
 use yii\web\Link;
 use yii\web\NotFoundHttpException;
@@ -63,7 +63,8 @@ class Solicitude extends base\Solicitude implements Contract
             'resourceName' => 'solicitude',
             'parentSlugRelation' => 'form',
             'checkAccess' => function ($params) {
-                if (isset($params['solicitude_id'])
+                if (
+                    isset($params['solicitude_id'])
                     && $params['solicitude_id'] != $this->id
                 ) {
                     throw new NotFoundHttpException(

@@ -1,15 +1,15 @@
 <?php
 
-namespace tecnocen\formgenerator\roa\resources;
+namespace roaresearch\yii2\formgenerator\roa\resources;
 
-use tecnocen\formgenerator\roa\models\Form;
-use tecnocen\formgenerator\roa\models\FormSearch;
+use roaresearch\yii2\formgenerator\roa\models\Form;
+use roaresearch\yii2\formgenerator\roa\models\FormSearch;
 
 /**
  * CRUD resource for `Form` records
  * @author Angel (Faryshta) Guevara <aguevara@alquimiadigital.mx>
  */
-class FormResource extends \tecnocen\roa\controllers\Resource
+class FormResource extends \roaresearch\yii2\roa\controllers\Resource
 {
     /**
      * @inheritdoc

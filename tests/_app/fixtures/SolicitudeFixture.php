@@ -2,7 +2,7 @@
 
 namespace app\fixtures;
 
-use tecnocen\formgenerator\models\Solicitude;
+use roaresearch\yii2\formgenerator\models\Solicitude;
 
 /**
  * Fixture to load `Solicitude` records.

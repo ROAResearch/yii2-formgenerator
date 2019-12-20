@@ -1,16 +1,14 @@
 <?php
 
-use app\fixtures\OauthAccessTokensFixture;
-use app\fixtures\FieldFixture;
-use Codeception\Example;
-use Codeception\Util\HttpCode;
+use app\fixtures\{OauthAccessTokensFixture, FieldFixture};
+use Codeception\{Example, Util\HttpCode};
 
 /**
  * Cest to field resource.
  *
  * @author Carlos (neverabe) Llamosas <carlos@tecnocen.com>
  */
-class FieldCest extends \tecnocen\roa\test\AbstractResourceCest
+class FieldCest extends \roaresearch\yii2\roa\test\AbstractResourceCest
 {
     protected function authToken(ApiTester $I)
     {
@@ -19,7 +17,7 @@ class FieldCest extends \tecnocen\roa\test\AbstractResourceCest
 
     /**
      * @depends DataTypeCest:fixtures
-     */ 
+     */
     public function fixtures(ApiTester $I)
     {
         $I->haveFixtures([
@@ -27,7 +25,7 @@ class FieldCest extends \tecnocen\roa\test\AbstractResourceCest
                 'class' => FieldFixture::class,
                 'depends' => [],
             ],
-	]);
+        ]);
     }
 
     /**
@@ -262,7 +260,7 @@ class FieldCest extends \tecnocen\roa\test\AbstractResourceCest
     /**
      * @inheritdoc
      */
-    protected function recordJsonType()
+    protected function recordJsonType(): array
     {
         return [
             'id' => 'integer:>0',
@@ -273,7 +271,7 @@ class FieldCest extends \tecnocen\roa\test\AbstractResourceCest
     /**
      * @inheritdoc
      */
-    protected function getRoutePattern()
+    protected function getRoutePattern(): string
     {
         return 'field';
     }

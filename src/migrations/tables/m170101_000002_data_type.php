@@ -1,6 +1,6 @@
 <?php
 
-class m170101_000002_data_type extends tecnocen\rmdb\migrations\CreateEntity
+class m170101_000002_data_type extends roaresearch\yii2\rmdb\migrations\CreateEntity
 {
     /**
      * @inheritdoc

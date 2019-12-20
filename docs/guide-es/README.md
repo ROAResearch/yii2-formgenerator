@@ -59,11 +59,11 @@ modulo de version al contenedos de api que sera usado para contener los
 recursos.
 
 ```php
-class Api extends \tecnocen\roa\modules\ApiContainer
+class Api extends \roaresearch\yii2\roa\modules\ApiContainer
 {
    $versions = [
        // other versions
-       'fg1' => ['class' => 'tecnocen\formgenerator\roa\module\Version'],
+       'fg1' => ['class' => 'roaresearch\yii2\formgenerator\roa\module\Version'],
    ];
 }
 ```

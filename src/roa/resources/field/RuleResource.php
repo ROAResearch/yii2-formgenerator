@@ -1,15 +1,15 @@
 <?php
 
-namespace tecnocen\formgenerator\roa\resources\field;
+namespace roaresearch\yii2\formgenerator\roa\resources\field;
 
 use Yii;
-use tecnocen\formgenerator\roa\models\FieldRule;
+use roaresearch\yii2\formgenerator\roa\models\FieldRule;
 
 /**
  * CRUD resource for `FieldRule` records
  * @author Angel (Faryshta) Guevara <aguevara@alquimiadigital.mx>
  */
-class RuleResource extends \tecnocen\roa\controllers\Resource
+class RuleResource extends \roaresearch\yii2\roa\controllers\Resource
 {
     /**
      * @inheritdoc
