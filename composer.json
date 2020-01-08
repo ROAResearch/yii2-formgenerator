@@ -48,7 +48,7 @@
             "@composer update --prefer-stable",
             "@composer migrate -- -p=@app/migrations",
             "@composer migrate -- -p=@roaresearch/yii2/oauth2server/migrations/tables",
-            "@composer migrate -- -p=@roaresearch/yii2/formgenerator/migrations",
+            "@composer migrate -- -p=@roaresearch/yii2/formgenerator/migrations/tables",
             "chmod +x git-hooks/pre-commit",
             "ln -frs git-hooks/pre-commit .git/hooks/pre-commit"
         ],
