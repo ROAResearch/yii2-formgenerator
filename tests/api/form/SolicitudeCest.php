@@ -6,7 +6,7 @@ use Codeception\{Example, Util\HttpCode};
 /**
  * Cest to form/<form_id:\d+>/solicitude resource.
  *
- * @author Carlos (neverabe) Llamosas <carlos@tecnocen.com>
+ * @author Carlos (neverabe) Llamosas <cmllamosas@gmail.com>
  */
 class SolicitudeCest extends \roaresearch\yii2\roa\test\AbstractResourceCest
 {
