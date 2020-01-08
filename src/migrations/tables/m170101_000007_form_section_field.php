@@ -1,11 +1,13 @@
 <?php
 
-class m170101_000007_form_section_field extends roaresearch\yii2\rmdb\migrations\CreateEntity
+use roaresearch\yii2\rmdb\migrations\CreateEntity;
+
+class m170101_000007_form_section_field extends CreateEntity
 {
     /**
      * @inheritdoc
      */
-    public function getTableName()
+    public function getTableName(): string
     {
         return 'formgenerator_form_section_field';
     }
@@ -13,7 +15,7 @@ class m170101_000007_form_section_field extends roaresearch\yii2\rmdb\migrations
     /**
      * @inheritdoc
      */
-    public function columns()
+    public function columns(): array
     {
         return [
             'section_id' => $this->normalKey(),
@@ -27,7 +29,7 @@ class m170101_000007_form_section_field extends roaresearch\yii2\rmdb\migrations
     /**
      * @inheritdoc
      */
-    public function foreignKeys()
+    public function foreignKeys(): array
     {
         return [
             'section_id' => 'formgenerator_form_section',
@@ -38,7 +40,7 @@ class m170101_000007_form_section_field extends roaresearch\yii2\rmdb\migrations
     /**
      * @inheritdoc
      */
-    public function compositePrimaryKeys()
+    public function compositePrimaryKeys(): array
     {
         return ['section_id', 'field_id'];
     }
@@ -46,7 +48,7 @@ class m170101_000007_form_section_field extends roaresearch\yii2\rmdb\migrations
     /**
      * @inheritdoc
      */
-    public function compositeUniqueKeys()
+    public function compositeUniqueKeys(): array
     {
         return ['position' => ['section_id', 'position']];
     }

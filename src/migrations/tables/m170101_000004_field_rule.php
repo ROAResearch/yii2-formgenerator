@@ -1,11 +1,13 @@
 <?php
 
-class m170101_000004_field_rule extends roaresearch\yii2\rmdb\migrations\CreateEntity
+use roaresearch\yii2\rmdb\migrations\CreateEntity;
+
+class m170101_000004_field_rule extends CreateEntity
 {
     /**
      * @inheritdoc
      */
-    public function getTableName()
+    public function getTableName(): string
     {
         return 'formgenerator_field_rule';
     }
@@ -13,7 +15,7 @@ class m170101_000004_field_rule extends roaresearch\yii2\rmdb\migrations\CreateE
     /**
      * @inheritdoc
      */
-    public function columns()
+    public function columns(): array
     {
         return [
             'id' => $this->primaryKey(),
@@ -25,7 +27,7 @@ class m170101_000004_field_rule extends roaresearch\yii2\rmdb\migrations\CreateE
     /**
      * @inheritdoc
      */
-    public function foreignKeys()
+    public function foreignKeys(): array
     {
         return ['field_id' => 'formgenerator_field'];
     }
