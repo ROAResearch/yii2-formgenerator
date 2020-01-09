@@ -2,8 +2,7 @@
 
 namespace roaresearch\yii2\formgenerator\roa\models;
 
-use yii\base\Model;
-use yii\data\ActiveDataProvider;
+use yii\{base\Model, data\ActiveDataProvider};
 
 /**
  * Contract to filter and sort collections of `SolicitudeValue` records.

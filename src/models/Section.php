@@ -8,11 +8,15 @@ use yii\db\ActiveQuery;
 /**
  * Model class for table `{{%formgenerator_form_section}}`
  *
- * @property integer $id
- * @property integer $form_id
- * @property integer $position
+ * @property int $id
+ * @property int $form_id
+ * @property int $position
  * @property string $name
  * @property string $label
+ * @property int $created_by
+ * @property string $created_at
+ * @property int $updated_by
+ * @property string $updated_at
  *
  * @property Form $form
  * @property SectionField[] $sectionFields

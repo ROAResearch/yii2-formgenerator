@@ -2,16 +2,19 @@
 
 namespace roaresearch\yii2\formgenerator\models;
 
-use yii\db\ActiveQuery;
-use yii\web\UploadedFile;
+use yii\{db\ActiveQuery, web\UploadedFile};
 
 /**
- * Model class for table `{{%formgenerator_form}}`
+ * Model class for table `{{%formgenerator_data_type}}`
  *
- * @property integer $id
+ * @property int $id
  * @property string $name
  * @property string $label
  * @property string $cast
+ * @property int $created_by
+ * @property string $created_at
+ * @property int $updated_by
+ * @property string $updated_at
  *
  * @property Field[] $fields
  */

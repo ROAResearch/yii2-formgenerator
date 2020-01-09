@@ -7,8 +7,12 @@ use yii\db\ActiveQuery;
 /**
  * Model class for table `{{%formgenerator_form}}`
  *
- * @property integer $id
+ * @property int $id
  * @property string $name
+ * @property int $created_by
+ * @property string $created_at
+ * @property int $updated_by
+ * @property string $updated_at
  *
  * @property Section[] $sections
  */

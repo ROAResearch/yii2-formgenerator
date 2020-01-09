@@ -2,16 +2,19 @@
 
 namespace roaresearch\yii2\formgenerator\models;
 
-use yii\base\Model;
-use yii\db\ActiveQuery;
+use yii\{base\Model, db\ActiveQuery};
 
 /**
  * Model class for table `{{%formgenerator_field}}`
  *
- * @property integer $id
- * @property integer $data_type_id
+ * @property int $id
+ * @property int $data_type_id
  * @property string $name
  * @property string $label
+ * @property int $created_by
+ * @property string $created_at
+ * @property int $updated_by
+ * @property string $updated_at
  *
  * @property DataType $dataType
  * @property Rules[] $rules

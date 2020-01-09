@@ -3,10 +3,8 @@
 namespace roaresearch\yii2\formgenerator\roa\models;
 
 use roaresearch\yii2\formgenerator\models as base;
-use roaresearch\yii2\roa\hal\Contract;
-use roaresearch\yii2\roa\hal\ContractTrait;
-use yii\helpers\Url;
-use yii\web\Link;
+use roaresearch\yii2\roa\hal\{Contract, ContractTrait};
+use yii\{helpers\Url, web\Link};
 
 /**
  * ROA contract handling Section records.

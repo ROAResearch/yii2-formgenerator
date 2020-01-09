@@ -7,10 +7,14 @@ use yii\db\ActiveQuery;
 /**
  * Model class for table `{{%formgenerator_solicitude_value}}`
  *
- * @property integer $section_id
- * @property integer $field_id
- * @property integer $solicitude_id
+ * @property int $section_id
+ * @property int $field_id
+ * @property int $solicitude_id
  * @property string $value
+ * @property int $created_by
+ * @property string $created_at
+ * @property int $updated_by
+ * @property string $updated_at
  *
  * @property SectionField $sectionField
  * @property Section $section

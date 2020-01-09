@@ -2,17 +2,23 @@
 
 namespace roaresearch\yii2\formgenerator\models;
 
-use yii\base\Model;
-use yii\db\ActiveQuery;
-use yii\helpers\ArrayHelper;
-use yii\validators\Validator;
+use yii\{
+    base\Model,
+    db\ActiveQuery,
+    helpers\ArrayHelper,
+    validators\Validator
+};
 
 /**
  * Model class for table `{{%formgenerator_field_rule}}`
  *
- * @property integer $id
- * @property integer $field_id
+ * @property int $id
+ * @property int $field_id
  * @property string $rule_class
+ * @property int $created_by
+ * @property string $created_at
+ * @property int $updated_by
+ * @property string $updated_at
  *
  * @property Field $field
  * @property FieldRuleProperty[] $properties

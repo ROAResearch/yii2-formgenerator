@@ -7,9 +7,13 @@ use yii\db\ActiveQuery;
 /**
  * Model class for table `{{%formgenerator_field_rule_property}}`
  *
- * @property integer $rule_id
+ * @property int $rule_id
  * @property string $property
  * @property string $value
+ * @property int $created_by
+ * @property string $created_at
+ * @property int $updated_by
+ * @property string $updated_at
  *
  * @property FieldRule $rule
  */
