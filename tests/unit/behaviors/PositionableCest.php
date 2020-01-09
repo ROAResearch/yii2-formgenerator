@@ -1,10 +1,7 @@
 <?php
 
-use roaresearch\yii2\formgenerator\behaviors\Positionable;
-use roaresearch\yii2\formgenerator\models\Form;
-use yii\base\Component;
-use yii\base\InvalidConfigException;
-use yii\db\ActiveRecord;
+use roaresearch\yii2\formgenerator\{behaviors\Positionable, models\Form};
+use yii\{base\Component, base\InvalidConfigException, db\ActiveRecord};
 
 class PositionableCest
 {
@@ -12,7 +9,7 @@ class PositionableCest
 
     public function attach(UnitTester $I)
     {
-        $I->expectException(
+        $I->expectThrowable(
             new InvalidConfigException(
                 Positionable::class . '::$parentAttribute must be set.'
             ),
@@ -22,7 +19,7 @@ class PositionableCest
             }
         );
 
-        $I->expectException(
+        $I->expectThrowable(
             new InvalidConfigException(
                 Positionable::class
                     . '::$owner must extend '
@@ -36,7 +33,7 @@ class PositionableCest
             }
         );
 
-        $I->expectException(
+        $I->expectThrowable(
             new InvalidConfigException(
                 Form::class . '::$none is not an attribute.'
             ),
@@ -48,7 +45,7 @@ class PositionableCest
             }
         );
 
-        $I->expectException(
+        $I->expectThrowable(
             new InvalidConfigException(
                 Form::class . '::$position is not an attribute.'
             ),

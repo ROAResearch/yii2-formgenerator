@@ -15,9 +15,6 @@ class FieldCest extends \roaresearch\yii2\roa\test\AbstractResourceCest
         $I->amBearerAuthenticated(OauthAccessTokensFixture::SIMPLE_TOKEN);
     }
 
-    /**
-     * @depends DataTypeCest:fixtures
-     */
     public function fixtures(ApiTester $I)
     {
         $I->haveFixtures([
