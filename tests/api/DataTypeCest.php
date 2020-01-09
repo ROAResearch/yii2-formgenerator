@@ -1,27 +1,26 @@
 <?php
 
-use app\fixtures\{FormFixture, OauthAccessTokensFixture};
+use app\fixtures\OauthAccessTokensFixture;
 use Codeception\{Example, Util\HttpCode};
+use roaresearch\yii2\formgenerator\fixtures\DataTypeFixture;
 
 /**
- * Cest to form resource.
+ * Cest to data-type resource.
  *
- * @author Carlos (neverabe) Llamosas <cmllamosas@gmail.com>
+ * @author Carlos (neverabe) Llamosas <carlos@tecnocen.com>
  */
-class FormCest extends \roaresearch\yii2\roa\test\AbstractResourceCest
+class DataTypeCest extends \roaresearch\yii2\roa\test\AbstractResourceCest
 {
     protected function authToken(ApiTester $I)
     {
         $I->amBearerAuthenticated(OauthAccessTokensFixture::SIMPLE_TOKEN);
     }
 
-    /**
-     * @depends DataTypeCest:fixtures
-     */
     public function fixtures(ApiTester $I)
     {
         $I->haveFixtures([
-            'form' => FormFixture::class,
+            'access_tokens' => OauthAccessTokensFixture::class,
+            'data_type' => DataTypeFixture::class,
         ]);
     }
 
@@ -34,7 +33,7 @@ class FormCest extends \roaresearch\yii2\roa\test\AbstractResourceCest
      */
     public function index(ApiTester $I, Example $example)
     {
-        $I->wantTo('Retrieve list of Form records.');
+        $I->wantTo('Retrieve list of DataType records.');
         $this->internalIndex($I, $example);
     }
 
@@ -45,29 +44,29 @@ class FormCest extends \roaresearch\yii2\roa\test\AbstractResourceCest
     {
         return [
             'list' => [
-                'url' => '/form',
+                'url' => '/data-type',
                 'httpCode' => HttpCode::OK,
                 'headers' => [
-                    'X-Pagination-Total-Count' => 1,
+                    'X-Pagination-Total-Count' => 5,
                 ],
             ],
-            'not found form' => [
-                'url' => '/form/15',
+            'not found data-type' => [
+                'url' => '/data-type/15',
                 'httpCode' => HttpCode::NOT_FOUND,
             ],
             'filter by author' => [
                 'urlParams' => [
                     'created_by' => 1,
-                    'expand' => 'sections'
                 ],
                 'httpCode' => HttpCode::OK,
                 'headers' => [
-                    'X-Pagination-Total-Count' => 1,
+                    'X-Pagination-Total-Count' => 5,
                 ],
             ],
             'filter by name' => [
                 'urlParams' => [
-                    'name' => 'ticipa',
+                    'name' => 'string',
+                    'label' => 'String'
                 ],
                 'httpCode' => HttpCode::OK,
                 'headers' => [
@@ -76,7 +75,7 @@ class FormCest extends \roaresearch\yii2\roa\test\AbstractResourceCest
             ],
             'rule created_by' => [
                 'urlParams' => [
-                    'created_by' => 'wo',
+                    'created_by' => 'da',
                 ],
                 'httpCode' => HttpCode::UNPROCESSABLE_ENTITY,
             ],
@@ -92,7 +91,7 @@ class FormCest extends \roaresearch\yii2\roa\test\AbstractResourceCest
      */
     public function view(ApiTester $I, Example $example)
     {
-        $I->wantTo('Retrieve Form single record.');
+        $I->wantTo('Retrieve DataType single record.');
         $this->internalView($I, $example);
     }
 
@@ -103,21 +102,14 @@ class FormCest extends \roaresearch\yii2\roa\test\AbstractResourceCest
     {
         return [
             'single record' => [
-                'url' => '/form/1',
-                'data' => [
-                    'expand' => 'sections'
+                'urlParams' => [
+                    'id' => 1,
+                    'expand' => 'fields'
                 ],
                 'httpCode' => HttpCode::OK,
-                'response' => [
-                    '_embedded' => [
-                        'sections' => [
-                            ['id' => 1],
-                        ],
-                    ],
-                ],
             ],
-            'not found form record' => [
-                'url' => '/form/8',
+            'not found data type record' => [
+                'url' => '/data-type/8',
                 'httpCode' => HttpCode::NOT_FOUND,
             ],
         ];
@@ -132,7 +124,7 @@ class FormCest extends \roaresearch\yii2\roa\test\AbstractResourceCest
      */
     public function create(ApiTester $I, Example $example)
     {
-        $I->wantTo('Create a Form record.');
+        $I->wantTo('Create a DataType record.');
         $this->internalCreate($I, $example);
     }
 
@@ -142,30 +134,44 @@ class FormCest extends \roaresearch\yii2\roa\test\AbstractResourceCest
     protected function createDataProvider()
     {
         return [
-            'create form 1' => [
-                'urlParams' => [
-                    'name' => 'First Math Test',
+            'integerCast' => [
+                'data' => [
+                    'name' => 'positive-integer',
+                    'label' => 'Positive Integer',
+                    'cast' => 'integerCast'
                 ],
                 'httpCode' => HttpCode::CREATED,
             ],
             'unique' => [
-                'data' => ['name' => 'First Math Test'],
+                'urlParams' => [
+                    'name' => 'string',
+                    'label' => 'String',
+                    'cast' => 'stringCast'
+                ],
                 'httpCode' => HttpCode::UNPROCESSABLE_ENTITY,
                 'validationErrors' => [
-                    'name' => 'Form name "First Math Test" has already been taken.'
+                    'name' => 'Data Type name "string" has already been taken.'
                 ],
             ],
             'to short' => [
-                'data' => ['name' => 'fo'],
+                'urlParams' => [
+                    'name' => 'as',
+                    'label' => 'as',
+                    'cast' => 'as'
+                ],
                 'httpCode' => HttpCode::UNPROCESSABLE_ENTITY,
                 'validationErrors' => [
-                    'name' => 'Form name should contain at least 6 characters.'
+                    'name' => 'Data Type name should contain at least 4 characters.',
+                    'label' => 'Label should contain at least 4 characters.',
+                    'cast' => 'Type Cast Method should contain at least 4 characters.'
                 ],
             ],
             'not blank' => [
                 'httpCode' => HttpCode::UNPROCESSABLE_ENTITY,
                 'validationErrors' => [
-                    'name' => 'Form name cannot be blank.'
+                    'name' => 'Data Type name cannot be blank.',
+                    'label' => 'Label cannot be blank.',
+                    'cast' => 'Type Cast Method cannot be blank.',
                 ],
             ],
         ];
@@ -180,7 +186,7 @@ class FormCest extends \roaresearch\yii2\roa\test\AbstractResourceCest
      */
     public function update(ApiTester $I, Example $example)
     {
-        $I->wantTo('Update a Form record.');
+        $I->wantTo('Update a DataType record.');
         $this->internalUpdate($I, $example);
     }
 
@@ -190,17 +196,27 @@ class FormCest extends \roaresearch\yii2\roa\test\AbstractResourceCest
     protected function updateDataProvider()
     {
         return [
-            'update form 1' => [
+            'update data-type 1' => [
                 'urlParams' => ['id' => '1'],
-                'data' => ['name' => 'Second Math Test'],
-                'httpCode' => HttpCode::OK,
+                'data' => [
+                    'name' => 'integer',
+                    'label' => 'Integer',
+                    'cast' => 'integerCast'
+                ],
+                'httpCode' => HttpCode::UNPROCESSABLE_ENTITY,
             ],
             'to short' => [
                 'urlParams' => ['id' => '1'],
-                'data' => ['name' => 'fo'],
+                'data' => [
+                    'name' => 'da',
+                    'label' => 'Da',
+                    'cast' => 'ca',
+                ],
                 'httpCode' => HttpCode::UNPROCESSABLE_ENTITY,
                 'validationErrors' => [
-                    'name' => 'Form name should contain at least 6 characters.'
+                    'name' => 'Data Type name should contain at least 4 characters.',
+                    'label' => 'Label should contain at least 4 characters.',
+                    'cast' => 'Type Cast Method should contain at least 4 characters.',
                 ],
             ],
         ];
@@ -215,7 +231,7 @@ class FormCest extends \roaresearch\yii2\roa\test\AbstractResourceCest
      */
     public function delete(ApiTester $I, Example $example)
     {
-        $I->wantTo('Delete a Form record.');
+        $I->wantTo('Delete a DataType record.');
         $this->internalDelete($I, $example);
     }
 
@@ -225,12 +241,12 @@ class FormCest extends \roaresearch\yii2\roa\test\AbstractResourceCest
     protected function deleteDataProvider()
     {
         return [
-            'delete form 1' => [
-                'urlParams' => ['id' => '1'],
+            'delete data-type 1' => [
+                'urlParams' => ['id' => 6],
                 'httpCode' => HttpCode::NO_CONTENT,
             ],
             'not found' => [
-                'urlParams' => ['id' => '1'],
+                'urlParams' => ['id' => 6],
                 'httpCode' => HttpCode::NOT_FOUND,
                 'validationErrors' => [
                     'name' => 'The record "1" does not exists.'
@@ -247,6 +263,8 @@ class FormCest extends \roaresearch\yii2\roa\test\AbstractResourceCest
         return [
             'id' => 'integer:>0',
             'name' => 'string',
+            'label' => 'string',
+            'cast' => 'string',
         ];
     }
 
@@ -255,6 +273,6 @@ class FormCest extends \roaresearch\yii2\roa\test\AbstractResourceCest
      */
     protected function getRoutePattern(): string
     {
-        return 'form';
+        return 'data-type';
     }
 }
