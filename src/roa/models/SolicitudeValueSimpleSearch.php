@@ -12,6 +12,8 @@ use yii\{base\Model, data\ActiveDataProvider};
  * different `Solicitude` records.
  *
  * @author Angel (Faryshta) Guevara <aguevara@alquimiadigital.mx>
+ *
+ * @property int $form_id
  */
 class SolicitudeValueSimpleSearch extends SolicitudeValue implements
     \roaresearch\yii2\roa\ResourceSearch

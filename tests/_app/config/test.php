@@ -1,7 +1,7 @@
 <?php
 
 use roaresearch\yii2\formgenerator\roa\modules\Version as FormgeneratorVersion;
-use roaresearch\yii2\roa\{controllers\ProfileResource, hal\JsonResponseFormatter};
+use roaresearch\yii2\roa\controllers\ProfileResource;
 use yii\web\Response;
 
 return yii\helpers\ArrayHelper::merge(

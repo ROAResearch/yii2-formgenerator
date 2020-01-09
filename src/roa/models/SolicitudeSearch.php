@@ -9,6 +9,8 @@ use yii\data\ActiveDataProvider;
  * Contract to filter and sort collections of `Solicitude` records.
  *
  * @author Angel (Faryshta) Guevara <aguevara@alquimiadigital.mx>
+ *
+ * @property string $value
  */
 class SolicitudeSearch extends Solicitude implements ResourceSearch
 {
