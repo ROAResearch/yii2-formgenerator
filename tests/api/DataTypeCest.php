@@ -7,7 +7,7 @@ use roaresearch\yii2\formgenerator\fixtures\DataTypeFixture;
 /**
  * Cest to data-type resource.
  *
- * @author Carlos (neverabe) Llamosas <carlos@tecnocen.com>
+ * @author Carlos (neverabe) Llamosas <cmllamosas@gmail.com>
  */
 class DataTypeCest extends \roaresearch\yii2\roa\test\AbstractResourceCest
 {
