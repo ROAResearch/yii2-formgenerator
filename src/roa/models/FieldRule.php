@@ -1,12 +1,10 @@
 <?php
 
-namespace tecnocen\formgenerator\roa\models;
+namespace roaresearch\yii2\formgenerator\roa\models;
 
-use tecnocen\formgenerator\models as base;
-use tecnocen\roa\hal\Contract;
-use tecnocen\roa\hal\ContractTrait;
-use yii\helpers\Url;
-use yii\web\Link;
+use roaresearch\yii2\formgenerator\models as base;
+use roaresearch\yii2\roa\hal\{Contract, ContractTrait};
+use yii\{helpers\Url, web\Link, web\NotFoundHttpException};
 
 /**
  * ROA contract handling FieldRule records.
@@ -37,7 +35,8 @@ class FieldRule extends base\FieldRule implements Contract
             'resourceName' => 'rule',
             'parentSlugRelation' => 'field',
             'checkAccess' => function ($params) {
-                if (isset($params['rule_id'])
+                if (
+                    isset($params['rule_id'])
                     && $params['rule_id'] != $this->id
                 ) {
                     throw new NotFoundHttpException(

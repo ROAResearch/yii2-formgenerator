@@ -1,8 +1,8 @@
 <?php
 
-namespace tecnocen\formgenerator\fixtures;
+namespace roaresearch\yii2\formgenerator\fixtures;
 
-use tecnocen\formgenerator\models\DataType;
+use roaresearch\yii2\formgenerator\models\DataType;
 
 /**
  * Fixture to load default data types

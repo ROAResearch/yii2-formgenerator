@@ -2,13 +2,12 @@
 
 namespace app\models;
 
-use tecnocen\oauth2server\models\OauthAccessTokens as AccessToken;
+use roaresearch\yii2\oauth2server\models\OauthAccessTokens as AccessToken;
 use OAuth2\Storage\UserCredentialsInterface;
 use Yii;
 use yii\web\IdentityInterface;
 
-class User extends \yii\db\ActiveRecord
-    implements UserCredentialsInterface, IdentityInterface
+class User extends \yii\db\ActiveRecord implements UserCredentialsInterface, IdentityInterface
 {
     public static function tableName()
     {

@@ -2,7 +2,7 @@
 
 namespace app\fixtures;
 
-use tecnocen\formgenerator\models\Section;
+use roaresearch\yii2\formgenerator\models\Section;
 
 /**
  * Fixture to load `Section` records.

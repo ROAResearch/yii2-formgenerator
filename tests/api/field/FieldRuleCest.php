@@ -3,17 +3,15 @@
 namespace field;
 
 use ApiTester;
-use app\fixtures\OauthAccessTokensFixture;
-use app\fixtures\FieldRuleFixture;
-use Codeception\Example;
-use Codeception\Util\HttpCode;
+use app\fixtures\{OauthAccessTokensFixture, FieldRuleFixture};
+use Codeception\{Example, Util\HttpCode};
 
 /**
  * Cest to field/<field_id:\d+>/rule resource.
  *
- * @author Carlos (neverabe) Llamosas <carlos@tecnocen.com>
+ * @author Carlos (neverabe) Llamosas <cmllamosas@gmail.com>
  */
-class FieldRuleCest extends \tecnocen\roa\test\AbstractResourceCest
+class FieldRuleCest extends \roaresearch\yii2\roa\test\AbstractResourceCest
 {
     protected function authToken(ApiTester $I)
     {
@@ -223,7 +221,7 @@ class FieldRuleCest extends \tecnocen\roa\test\AbstractResourceCest
     /**
      * @inheritdoc
      */
-    protected function recordJsonType()
+    protected function recordJsonType(): array
     {
         return [
             'id' => 'integer:>0',
@@ -235,7 +233,7 @@ class FieldRuleCest extends \tecnocen\roa\test\AbstractResourceCest
     /**
      * @inheritdoc
      */
-    protected function getRoutePattern()
+    protected function getRoutePattern(): string
     {
         return 'field/<field_id:\d+>/rule';
     }

@@ -1,15 +1,15 @@
 <?php
 
-namespace tecnocen\formgenerator\roa\resources;
+namespace roaresearch\yii2\formgenerator\roa\resources;
 
-use tecnocen\formgenerator\roa\models\SolicitudeValue;
-use tecnocen\formgenerator\roa\models\SolicitudeValueSimpleSearch;
+use roaresearch\yii2\formgenerator\roa\models\SolicitudeValue;
+use roaresearch\yii2\formgenerator\roa\models\SolicitudeValueSimpleSearch;
 
 /**
  * Search resource for `SolicitudeValue` records
  * @author Angel (Faryshta) Guevara <aguevara@alquimiadigital.mx>
  */
-class SolicitudeValueResource extends \tecnocen\roa\controllers\Resource
+class SolicitudeValueResource extends \roaresearch\yii2\roa\controllers\Resource
 {
     /**
      * @inheritdoc

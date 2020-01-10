@@ -1,11 +1,13 @@
 <?php
 
-class m170101_000008_form_solicitude extends tecnocen\rmdb\migrations\CreateEntity
+use roaresearch\yii2\rmdb\migrations\CreateEntity;
+
+class m170101_000008_form_solicitude extends CreateEntity
 {
     /**
      * @inheritdoc
      */
-    public function getTableName()
+    public function getTableName(): string
     {
         return 'formgenerator_solicitude';
     }
@@ -13,7 +15,7 @@ class m170101_000008_form_solicitude extends tecnocen\rmdb\migrations\CreateEnti
     /**
      * @inheritdoc
      */
-    public function columns()
+    public function columns(): array
     {
         return [
             'id' => $this->primaryKey(),
@@ -24,7 +26,7 @@ class m170101_000008_form_solicitude extends tecnocen\rmdb\migrations\CreateEnti
     /**
      * @inheritdoc
      */
-    public function foreignKeys()
+    public function foreignKeys(): array
     {
         return ['form_id' => 'formgenerator_form'];
     }

@@ -1,9 +1,8 @@
 <?php
 
-namespace tecnocen\formgenerator\roa\models;
+namespace roaresearch\yii2\formgenerator\roa\models;
 
-use yii\base\Model;
-use yii\data\ActiveDataProvider;
+use yii\{base\Model, data\ActiveDataProvider};
 
 /**
  * Contract to filter and sort collections of `SolicitudeValue` records.
@@ -13,9 +12,11 @@ use yii\data\ActiveDataProvider;
  * different `Solicitude` records.
  *
  * @author Angel (Faryshta) Guevara <aguevara@alquimiadigital.mx>
+ *
+ * @property int $form_id
  */
 class SolicitudeValueSimpleSearch extends SolicitudeValue implements
-    \tecnocen\roa\ResourceSearch
+    \roaresearch\yii2\roa\ResourceSearch
 {
     /**
      * @inhertidoc

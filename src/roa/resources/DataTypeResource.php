@@ -1,15 +1,15 @@
 <?php
 
-namespace tecnocen\formgenerator\roa\resources;
+namespace roaresearch\yii2\formgenerator\roa\resources;
 
-use tecnocen\formgenerator\roa\models\DataType;
-use tecnocen\formgenerator\roa\models\DataTypeSearch;
+use roaresearch\yii2\formgenerator\roa\models\DataType;
+use roaresearch\yii2\formgenerator\roa\models\DataTypeSearch;
 
 /**
  * CRUD resource for `DataType` records
  * @author Angel (Faryshta) Guevara <aguevara@alquimiadigital.mx>
  */
-class DataTypeResource extends \tecnocen\roa\controllers\Resource
+class DataTypeResource extends \roaresearch\yii2\roa\controllers\Resource
 {
     /**
      * @inheritdoc

@@ -1,13 +1,15 @@
-Tecnocen Form Generator
+Yii2 Form Generator
 =======================
 
 Library to dynamically generate forms in database.
 
-[![Latest Stable Version](https://poser.pugx.org/tecnocen/yii2-formgenerator/v/stable)](https://packagist.org/packages/tecnocen/yii2-formgenerator)
-[![Total Downloads](https://poser.pugx.org/tecnocen/yii2-formgenerator/downloads)](https://packagist.org/packages/tecnocen/yii2-formgenerator)
+[![Latest Stable Version](https://poser.pugx.org/roaresearch/yii2-formgenerator/v/stable)](https://packagist.org/packages/roaresearch/yii2-formgenerator)
+[![Total Downloads](https://poser.pugx.org/roaresearch/yii2-formgenerator/downloads)](https://packagist.org/packages/roaresearch/yii2-formgenerator)
+[![Code Coverage](https://scrutinizer-ci.com/g/roaresearch/yii2-formgenerator/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/roaresearch/yii2-formgenerator/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/roaresearch/yii2-formgenerator/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/roaresearch/yii2-formgenerator/?branch=master)
 
-
-Travis [![Build Status Travis](https://travis-ci.org/tecnocen-com/yii2-formgenerator.svg?branch=master&style=flat?style=for-the-badge)](https://travis-ci.org/tecnocen-com/yii2-formgenerator)
+Scrutinizer [![Build Status Scrutinizer](https://scrutinizer-ci.com/g/roaresearch/yii2-formgenerator/badges/build.png?b=master&style=flat)](https://scrutinizer-ci.com/g/roaresearch/yii2-formgenerator/build-status/master)
+Travis [![Build Status Travis](https://travis-ci.org/roaresearch/yii2-formgenerator.svg?branch=master&style=flat?style=for-the-badge)](https://travis-ci.org/roaresearch/yii2-formgenerator)
 
 ## Getting Started
 
@@ -24,16 +26,16 @@ repository on the next step.
 ### Installation
 ----------------
 
-You can use composer to install the library `tecnocen/yii2-formgenerator` by running
+You can use composer to install the library `roaresearch/yii2-formgenerator` by running
 the command;
 
-`composer require tecnocen/yii2-formgenerator`
+`composer require roaresearch/yii2-formgenerator`
 
 or edit the `composer.json` file
 
 ```json
 require: {
-    "tecnocen/yii2-formgenerator": "*",
+    "roaresearch/yii2-formgenerator": "*",
 }
 ```
 
@@ -41,7 +43,7 @@ require: {
 
 Then run the required migrations
 
-`php yii migrate/up -p=@tecnocen/formgenerator/migrations/tables`
+`php yii migrate/up -p=@roaresearch/formgenerator/migrations/tables`
 
 Which will install the following table structure
 
@@ -55,11 +57,11 @@ The ROA support is very simple and can be done by just adding a module version
 to the api container which will be used to hold the resources.
 
 ```php
-class Api extends \tecnocen\roa\modules\ApiContainer
+class Api extends \roaresearch\yii2\roa\modules\ApiContainer
 {
    $versions = [
        // other versions
-       'fg1' => ['class' => 'tecnocen\formgenerator\roa\modules\Version'],
+       'fg1' => ['class' => 'roaresearch\yii2\formgenerator\roa\modules\Version'],
    ];
 }
 ```
@@ -82,7 +84,7 @@ Alternatively you can add the resource routes to your existing version.
 
 ## Running the tests
 
-This library contains tools to set up a testing environment using composer scripts, for more information see [Testing Environment](https://github.com/tecnocen-com/yii2-formgenerator/blob/master/CONTRIBUTING.md) section.
+This library contains tools to set up a testing environment using composer scripts, for more information see [Testing Environment](https://github.com/roaresearch/yii2-formgenerator/blob/master/CONTRIBUTING.md) section.
 
 ### Break down into end to end tests
 
@@ -127,33 +129,25 @@ TO DO
 
 ## Code of Conduct
 
-Please read [CODE_OF_CONDUCT.md](https://github.com/tecnocen-com/yii2-formgenerator/blob/master/CODE_OF_CONDUCT.md) for details on our code of conduct.
+Please read [CODE_OF_CONDUCT.md](https://github.com/roaresearch/yii2-formgenerator/blob/master/CODE_OF_CONDUCT.md) for details on our code of conduct.
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://github.com/tecnocen-com/yii2-formgenerator/blob/master/CONTRIBUTING.md) for details on the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://github.com/roaresearch/yii2-formgenerator/blob/master/CONTRIBUTING.md) for details on the process for submitting pull requests to us.
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/tecnocen-com/yii2-formgenerator/tags).
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/ROAResearch/yii2-formgenerator/tags).
 
-_Considering [SemVer](http://semver.org/) for versioning rules 9, 10 and 11 talk about pre-releases, they will not be used within the Tecnocen-com._
+_Considering [SemVer](http://semver.org/) for versioning rules 9, 10 and 11 talk about pre-releases, they will not be used within the ROAResearch._
 
 ## Authors
 
-* [**Angel Guevara**](https://github.com/Faryshta) - *Initial work* - [Tecnocen.com](https://github.com/Tecnocen-com)
-* [**Carlos Llamosas**](https://github.com/neverabe) - *Initial work* - [Tecnocen.com](https://github.com/Tecnocen-com)
+* [**Angel Guevara**](https://github.com/Faryshta) - Initial work
+* [**Carlos Llamosas**](https://github.com/neverabe) - Initial work
 
-See also the list of [contributors](https://github.com/tecnocen-com/yii2-formgenerator/graphs/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/ROAResearch/yii2-formgenerator/graphs/contributors) who participated in this project.
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* TO DO - Hat tip to anyone who's code was used
-* TO DO - Inspiration
-* TO DO - etc
-
-[![yii2-workflow](https://img.shields.io/badge/Powered__by-Tecnocen.com-orange.svg?style=for-the-badge)](https://www.tecnocen.com/)

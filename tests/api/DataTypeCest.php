@@ -1,16 +1,15 @@
 <?php
 
 use app\fixtures\OauthAccessTokensFixture;
-use Codeception\Example;
-use Codeception\Util\HttpCode;
-use tecnocen\formgenerator\fixtures\DataTypeFixture;
+use Codeception\{Example, Util\HttpCode};
+use roaresearch\yii2\formgenerator\fixtures\DataTypeFixture;
 
 /**
  * Cest to data-type resource.
  *
  * @author Carlos (neverabe) Llamosas <carlos@tecnocen.com>
  */
-class DataTypeCest extends \tecnocen\roa\test\AbstractResourceCest
+class DataTypeCest extends \roaresearch\yii2\roa\test\AbstractResourceCest
 {
     protected function authToken(ApiTester $I)
     {
@@ -259,7 +258,7 @@ class DataTypeCest extends \tecnocen\roa\test\AbstractResourceCest
     /**
      * @inheritdoc
      */
-    protected function recordJsonType()
+    protected function recordJsonType(): array
     {
         return [
             'id' => 'integer:>0',
@@ -272,7 +271,7 @@ class DataTypeCest extends \tecnocen\roa\test\AbstractResourceCest
     /**
      * @inheritdoc
      */
-    protected function getRoutePattern()
+    protected function getRoutePattern(): string
     {
         return 'data-type';
     }

@@ -1,23 +1,27 @@
 <?php
 
-namespace tecnocen\formgenerator\models;
+namespace roaresearch\yii2\formgenerator\models;
 
 use yii\db\ActiveQuery;
 
 /**
  * Model class for table `{{%formgenerator_solicitude_value}}`
  *
- * @property integer $section_id
- * @property integer $field_id
- * @property integer $solicitude_id
+ * @property int $section_id
+ * @property int $field_id
+ * @property int $solicitude_id
  * @property string $value
+ * @property int $created_by
+ * @property string $created_at
+ * @property int $updated_by
+ * @property string $updated_at
  *
  * @property SectionField $sectionField
  * @property Section $section
  * @property Field $field
  * @property Solicitude $solicitude
  */
-class SolicitudeValue extends \tecnocen\rmdb\models\Entity
+class SolicitudeValue extends \roaresearch\yii2\rmdb\models\Entity
 {
     /**
      * @var string full class name of the model used in the relation
@@ -54,7 +58,7 @@ class SolicitudeValue extends \tecnocen\rmdb\models\Entity
     /**
      * @inheritdoc
      */
-    protected function attributeTypecast()
+    protected function attributeTypecast(): array
     {
         return parent::attributeTypecast() + [
             'section_id' => 'integer',
@@ -134,14 +138,14 @@ class SolicitudeValue extends \tecnocen\rmdb\models\Entity
                 ->with([
                     'dataType',
                     'rules' => function ($query) {
-                        $query->modelClass = 'tecnocen\\formgenerator\\models\\FieldRule';
+                        $query->modelClass = FieldRule::class;
                     },
                     'rules.properties',
                 ])
                 ->one();
             $this->populateRelation('field', $field);
-            foreach ($field->buildValidators($this, 'value')
-                as $validator
+            foreach (
+                $field->buildValidators($this, 'value') as $validator
             ) {
                 $validator->validateAttributes($this, ['value']);
             }

@@ -5,8 +5,8 @@ return [
     'language' => 'en-US',
     'aliases' => [
         '@tests' => dirname(dirname(__DIR__)),
-        '@tecnocen/formgenerator' => dirname(dirname(dirname(__DIR__))) . '/src',
-        '@tecnocen/oauth2server' => VENDOR_DIR . '/tecnocen/yii2-oauth2-server/src',
+        '@roaresearch/yii2/formgenerator' => dirname(dirname(dirname(__DIR__))) . '/src',
+        '@roaresearch/yii2/oauth2server' => VENDOR_DIR . '/roaresearch/yii2-oauth2-server/src',
     ],
     'components' => [
         'db' => require __DIR__ . '/db.php',

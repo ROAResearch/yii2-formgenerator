@@ -1,18 +1,22 @@
 <?php
 
-namespace tecnocen\formgenerator\models;
+namespace roaresearch\yii2\formgenerator\models;
 
 use yii\db\ActiveQuery;
 
 /**
  * Model class for table `{{%formgenerator_form}}`
  *
- * @property integer $id
+ * @property int $id
  * @property string $name
+ * @property int $created_by
+ * @property string $created_at
+ * @property int $updated_by
+ * @property string $updated_at
  *
  * @property Section[] $sections
  */
-class Form extends \tecnocen\rmdb\models\Entity
+class Form extends \roaresearch\yii2\rmdb\models\Entity
 {
     /**
      * @var string full class name of the model used in the relation
@@ -31,7 +35,7 @@ class Form extends \tecnocen\rmdb\models\Entity
     /**
      * @inheritdoc
      */
-    protected function attributeTypecast()
+    protected function attributeTypecast(): array
     {
         return parent::attributeTypecast() + ['id' => 'integer'];
     }

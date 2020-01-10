@@ -1,11 +1,13 @@
 <?php
 
-class m170101_000006_form_section extends tecnocen\rmdb\migrations\CreateEntity
+use roaresearch\yii2\rmdb\migrations\CreateEntity;
+
+class m170101_000006_form_section extends CreateEntity
 {
     /**
      * @inheritdoc
      */
-    public function getTableName()
+    public function getTableName(): string
     {
         return 'formgenerator_form_section';
     }
@@ -13,7 +15,7 @@ class m170101_000006_form_section extends tecnocen\rmdb\migrations\CreateEntity
     /**
      * @inheritdoc
      */
-    public function columns()
+    public function columns(): array
     {
         return [
             'id' => $this->primaryKey(),
@@ -27,7 +29,7 @@ class m170101_000006_form_section extends tecnocen\rmdb\migrations\CreateEntity
     /**
      * @inheritdoc
      */
-    public function foreignKeys()
+    public function foreignKeys(): array
     {
         return ['form_id' => 'formgenerator_form'];
     }
@@ -35,7 +37,7 @@ class m170101_000006_form_section extends tecnocen\rmdb\migrations\CreateEntity
     /**
      * @inheritdoc
      */
-    public function compositeUniqueKeys()
+    public function compositeUniqueKeys(): array
     {
         return [
             'name' => ['form_id', 'name'],

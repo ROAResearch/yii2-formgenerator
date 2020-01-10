@@ -1,18 +1,17 @@
 <?php
+
 namespace form;
 
 use ApiTester;
-use app\fixtures\OauthAccessTokensFixture;
-use app\fixtures\SectionFixture;
-use Codeception\Example;
-use Codeception\Util\HttpCode;
+use app\fixtures\{OauthAccessTokensFixture, SectionFixture};
+use Codeception\{Example, Util\HttpCode};
 
 /**
  * Cest to form/<form_id:\d+>/section resource.
  *
- * @author Carlos (neverabe) Llamosas <carlos@tecnocen.com>
+ * @author Carlos (neverabe) Llamosas <cmllamosas@gmail.com>
  */
-class SectionCest extends \tecnocen\roa\test\AbstractResourceCest
+class SectionCest extends \roaresearch\yii2\roa\test\AbstractResourceCest
 {
     protected function authToken(ApiTester $I)
     {
@@ -317,7 +316,7 @@ class SectionCest extends \tecnocen\roa\test\AbstractResourceCest
     /**
      * @inheritdoc
      */
-    protected function recordJsonType()
+    protected function recordJsonType(): array
     {
         return [
             'id' => 'integer:>0',
@@ -328,7 +327,7 @@ class SectionCest extends \tecnocen\roa\test\AbstractResourceCest
     /**
      * @inheritdoc
      */
-    protected function getRoutePattern()
+    protected function getRoutePattern(): string
     {
         return 'form/<form_id:\d+>/section';
     }

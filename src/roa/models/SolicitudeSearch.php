@@ -1,14 +1,16 @@
 <?php
 
-namespace tecnocen\formgenerator\roa\models;
+namespace roaresearch\yii2\formgenerator\roa\models;
 
-use tecnocen\roa\ResourceSearch;
+use roaresearch\yii2\roa\ResourceSearch;
 use yii\data\ActiveDataProvider;
 
 /**
  * Contract to filter and sort collections of `Solicitude` records.
  *
  * @author Angel (Faryshta) Guevara <aguevara@alquimiadigital.mx>
+ *
+ * @property string $value
  */
 class SolicitudeSearch extends Solicitude implements ResourceSearch
 {

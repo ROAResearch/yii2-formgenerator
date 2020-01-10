@@ -1,32 +1,32 @@
 <?php
 
-namespace tecnocen\formgenerator\roa\modules;
+namespace roaresearch\yii2\formgenerator\roa\modules;
 
-use tecnocen\formgenerator\roa\resources;
+use roaresearch\yii2\formgenerator\roa\resources;
 
-class Version extends \tecnocen\roa\modules\ApiVersion
+class Version extends \roaresearch\yii2\roa\modules\ApiVersion
 {
     /**
      * @inheritdoc
      */
     public $controllerNamespace = resources::class;
 
-    const FORM_ROUTE = 'form';
-    const SECTION_ROUTE = self::FORM_ROUTE . '/<form_id:\d+>/section';
-    const SECTION_FIELD_ROUTE = self::SECTION_ROUTE . '/<section_id:\d+>/field';
+    public const FORM_ROUTE = 'form';
+    public const SECTION_ROUTE = self::FORM_ROUTE . '/<form_id:\d+>/section';
+    public const SECTION_FIELD_ROUTE = self::SECTION_ROUTE . '/<section_id:\d+>/field';
 
-    const DATA_TYPE_ROUTE = 'data-type';
+    public const DATA_TYPE_ROUTE = 'data-type';
 
-    const FIELD_ROUTE = 'field';
-    const FIELD_RULE_ROUTE = self::FIELD_ROUTE . '/<field_id:\d+>/rule';
-    const FIELD_RULE_PROPERTY_ROUTE = self::FIELD_RULE_ROUTE
+    public const FIELD_ROUTE = 'field';
+    public const FIELD_RULE_ROUTE = self::FIELD_ROUTE . '/<field_id:\d+>/rule';
+    public const FIELD_RULE_PROPERTY_ROUTE = self::FIELD_RULE_ROUTE
         . '/<rule_id:\d+>/property';
 
-    const SOLICITUDE_ROUTE = self::FORM_ROUTE . '/<form_id:\d+>/solicitude';
-    const SOLICITUDE_VALUE_ROUTE = self::SOLICITUDE_ROUTE
+    public const SOLICITUDE_ROUTE = self::FORM_ROUTE . '/<form_id:\d+>/solicitude';
+    public const SOLICITUDE_VALUE_ROUTE = self::SOLICITUDE_ROUTE
         . '/<solicitude_id:\d+>/value';
 
-    const SOLICITUDE_VALUE_SEARCH_ROUTE = 'solicitude-value';
+    public const SOLICITUDE_VALUE_SEARCH_ROUTE = 'solicitude-value';
 
     /**
      * @inheritdoc

@@ -1,13 +1,10 @@
 <?php
 
-namespace tecnocen\formgenerator\roa\models;
+namespace roaresearch\yii2\formgenerator\roa\models;
 
-use tecnocen\formgenerator\models as base;
-use tecnocen\roa\hal\Contract;
-use tecnocen\roa\hal\ContractTrait;
-use yii\helpers\Url;
-use yii\web\Link;
-use yii\web\NotFoundHttpException;
+use roaresearch\yii2\formgenerator\models as base;
+use roaresearch\yii2\roa\hal\{Contract, ContractTrait};
+use yii\{helpers\Url, web\Link, web\NotFoundHttpException};
 
 /**
  * ROA contract handling Form records.
@@ -51,7 +48,8 @@ class Form extends base\Form implements Contract
         return [
             'resourceName' => 'form',
             'checkAccess' => function ($params) {
-                if (isset($params['form_id'])
+                if (
+                    isset($params['form_id'])
                     && $params['form_id'] != $this->id
                 ) {
                     throw new NotFoundHttpException(

@@ -1,11 +1,13 @@
 <?php
 
-class m170101_000005_field_rule_property extends tecnocen\rmdb\migrations\CreateEntity
+use roaresearch\yii2\rmdb\migrations\CreateEntity;
+
+class m170101_000005_field_rule_property extends CreateEntity
 {
     /**
      * @inheritdoc
      */
-    public function getTableName()
+    public function getTableName(): string
     {
         return 'formgenerator_field_rule_property';
     }
@@ -13,7 +15,7 @@ class m170101_000005_field_rule_property extends tecnocen\rmdb\migrations\Create
     /**
      * @inheritdoc
      */
-    public function columns()
+    public function columns(): array
     {
         return [
             'rule_id' => $this->normalKey(),
@@ -25,7 +27,7 @@ class m170101_000005_field_rule_property extends tecnocen\rmdb\migrations\Create
     /**
      * @inheritdoc
      */
-    public function foreignKeys()
+    public function foreignKeys(): array
     {
         return ['rule_id' => 'formgenerator_field_rule'];
     }
@@ -33,7 +35,7 @@ class m170101_000005_field_rule_property extends tecnocen\rmdb\migrations\Create
     /**
      * @inheritdoc
      */
-    public function compositePrimaryKeys()
+    public function compositePrimaryKeys(): array
     {
         return ['rule_id', 'property'];
     }

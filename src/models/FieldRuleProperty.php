@@ -1,19 +1,23 @@
 <?php
 
-namespace tecnocen\formgenerator\models;
+namespace roaresearch\yii2\formgenerator\models;
 
 use yii\db\ActiveQuery;
 
 /**
  * Model class for table `{{%formgenerator_field_rule_property}}`
  *
- * @property integer $rule_id
+ * @property int $rule_id
  * @property string $property
  * @property string $value
+ * @property int $created_by
+ * @property string $created_at
+ * @property int $updated_by
+ * @property string $updated_at
  *
  * @property FieldRule $rule
  */
-class FieldRuleProperty extends \tecnocen\rmdb\models\Entity
+class FieldRuleProperty extends \roaresearch\yii2\rmdb\models\Entity
 {
     /**
      * @var string full class name of the model used in the relation
@@ -32,7 +36,7 @@ class FieldRuleProperty extends \tecnocen\rmdb\models\Entity
     /**
      * @inheritdoc
      */
-    protected function attributeTypecast()
+    protected function attributeTypecast(): array
     {
         return parent::attributeTypecast() + ['rule_id' => 'integer'];
     }

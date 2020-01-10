@@ -1,16 +1,16 @@
 <?php
 
-namespace tecnocen\formgenerator\roa\resources\field\rule;
+namespace roaresearch\yii2\formgenerator\roa\resources\field\rule;
 
-use tecnocen\formgenerator\roa\models\FieldRuleProperty;
-use tecnocen\formgenerator\roa\models\FieldRulePropertySearch;
+use roaresearch\yii2\formgenerator\roa\models\FieldRuleProperty;
+use roaresearch\yii2\formgenerator\roa\models\FieldRulePropertySearch;
 use yii\db\ActiveQuery;
 
 /**
  * CRUD resource for `FieldRuleProperty` records
  * @author Angel (Faryshta) Guevara <aguevara@alquimiadigital.mx>
  */
-class PropertyResource extends \tecnocen\roa\controllers\Resource
+class PropertyResource extends \roaresearch\yii2\roa\controllers\Resource
 {
     /**
      * @inheritdoc

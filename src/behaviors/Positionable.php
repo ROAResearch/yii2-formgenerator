@@ -1,6 +1,6 @@
 <?php
 
-namespace tecnocen\formgenerator\behaviors;
+namespace roaresearch\yii2\formgenerator\behaviors;
 
 use yii\base\InvalidConfigException;
 use yii\db\ActiveQuery;

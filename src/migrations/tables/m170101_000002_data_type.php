@@ -1,11 +1,13 @@
 <?php
 
-class m170101_000002_data_type extends tecnocen\rmdb\migrations\CreateEntity
+use roaresearch\yii2\rmdb\migrations\CreateEntity;
+
+class m170101_000002_data_type extends CreateEntity
 {
     /**
      * @inheritdoc
      */
-    public function getTableName()
+    public function getTableName(): string
     {
         return 'formgenerator_data_type';
     }
@@ -13,7 +15,7 @@ class m170101_000002_data_type extends tecnocen\rmdb\migrations\CreateEntity
     /**
      * @inheritdoc
      */
-    public function columns()
+    public function columns(): array
     {
         return [
             'id' => $this->primaryKey(),

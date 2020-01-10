@@ -1,23 +1,29 @@
 <?php
 
-namespace tecnocen\formgenerator\models;
+namespace roaresearch\yii2\formgenerator\models;
 
-use yii\base\Model;
-use yii\db\ActiveQuery;
-use yii\helpers\ArrayHelper;
-use yii\validators\Validator;
+use yii\{
+    base\Model,
+    db\ActiveQuery,
+    helpers\ArrayHelper,
+    validators\Validator
+};
 
 /**
  * Model class for table `{{%formgenerator_field_rule}}`
  *
- * @property integer $id
- * @property integer $field_id
+ * @property int $id
+ * @property int $field_id
  * @property string $rule_class
+ * @property int $created_by
+ * @property string $created_at
+ * @property int $updated_by
+ * @property string $updated_at
  *
  * @property Field $field
  * @property FieldRuleProperty[] $properties
  */
-class FieldRule extends \tecnocen\rmdb\models\Entity
+class FieldRule extends \roaresearch\yii2\rmdb\models\Entity
 {
     /**
      * @var string full class name of the model used in the relation
@@ -42,7 +48,7 @@ class FieldRule extends \tecnocen\rmdb\models\Entity
     /**
      * @inheritdoc
      */
-    protected function attributeTypecast()
+    protected function attributeTypecast(): array
     {
         return parent::attributeTypecast() + [
             'id' => 'integer',

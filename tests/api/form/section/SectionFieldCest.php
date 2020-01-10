@@ -3,17 +3,15 @@
 namespace section\field;
 
 use ApiTester;
-use app\fixtures\OauthAccessTokensFixture;
-use app\fixtures\SectionFieldFixture;
-use Codeception\Example;
-use Codeception\Util\HttpCode;
+use app\fixtures\{OauthAccessTokensFixture, SectionFieldFixture};
+use Codeception\{Example, Util\HttpCode};
 
 /**
  * Cest to form/<form_id:\d+>/section/<section_id:\d+>/field resource.
  *
- * @author Carlos (neverabe) Llamosas <carlos@tecnocen.com>
+ * @author Carlos (neverabe) Llamosas <cmllamosas@gmail.com>
  */
-class SectionFieldCest extends \tecnocen\roa\test\AbstractResourceCest
+class SectionFieldCest extends \roaresearch\yii2\roa\test\AbstractResourceCest
 {
     protected function authToken(ApiTester $I)
     {
@@ -216,7 +214,7 @@ class SectionFieldCest extends \tecnocen\roa\test\AbstractResourceCest
             'update field 1' => [
                 'url' => '/form/1/section/1/field/2',
                 'data' => [
-                    'label'=> 'Label Updated',
+                    'label' => 'Label Updated',
                 ],
                 'httpCode' => HttpCode::OK,
             ],
@@ -259,7 +257,7 @@ class SectionFieldCest extends \tecnocen\roa\test\AbstractResourceCest
     /**
      * @inheritdoc
      */
-    protected function recordJsonType()
+    protected function recordJsonType(): array
     {
         return [
             'section_id' => 'integer:>0',
@@ -271,7 +269,7 @@ class SectionFieldCest extends \tecnocen\roa\test\AbstractResourceCest
     /**
      * @inheritdoc
      */
-    protected function getRoutePattern()
+    protected function getRoutePattern(): string
     {
         return 'form/<form_id:\d+>/section/<section_id:\d+>/field';
     }

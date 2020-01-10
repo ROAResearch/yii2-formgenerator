@@ -1,10 +1,9 @@
 <?php
 
-namespace tecnocen\formgenerator\roa\models;
+namespace roaresearch\yii2\formgenerator\roa\models;
 
-use tecnocen\roa\ResourceSearch;
-use yii\data\ActiveDataProvider;
-use yii\web\NotFoundHttpException;
+use roaresearch\yii2\roa\ResourceSearch;
+use yii\{data\ActiveDataProvider, web\NotFoundHttpException};
 
 /**
  * Contract to filter and sort collections of `Form` records.
