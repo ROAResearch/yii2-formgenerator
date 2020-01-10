@@ -1,8 +1,13 @@
 Yii2 Form Generator Change Log
 ==========================
 
-0.5.0 July 13, 2019
+2.0.0
+-----
+- Brk: Change namespaces and PSR12 support
+- Enh: Default support for code sniffer
 
+0.5.0 July 13, 2019
+-------------------
 - Brk: Methods now use the typecast supported in php 7.1
 
 0.4.2 December 19, 2018
